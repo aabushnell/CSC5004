@@ -1,0 +1,18 @@
+[
+  {
+    "file": "main.c",
+    "arguments": [
+      "/nix/store/r5ri78axx1qggkjq3vawywlzglg70b5w-gcc-wrapper-16.2.0/bin/gcc",
+      "-std=gnu11",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-O0",
+      "-o",
+      "kvm",
+      "main.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/min",
+    "output": "kvm"
+  }
+]

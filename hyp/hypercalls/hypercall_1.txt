@@ -1,0 +1,24 @@
+
+  case __NR_pvmmap:
+    addr = (uint64_t)ARG1;
+    len = (size_t)ARG2;
+    fd = (int)ARG3;
+    offset = (off_t)ARG4;
+    printf("[HC] pvmmap(%lu, %lu, %d, %lu)\n", addr, len, fd, offset);
+
+    size_t nb_pages = (len + 0x0FFF)/ 0x1000;
+    uint64_t ret_addr = get_pages(nb_pages);
+
+    uint64_t addr_offset = addr - ret_addr;
+    if (addr_offset >= 0 && addr_offset < 0x1000) {
+      ret_addr = addr;
+      if (addr_offset + nb_pages * 0x1000 - len > 0x1000) {
+        // bump an extra page
+        get_pages(1);
+      }
+    }
+    memory_map_range(guest_mem, ret_addr, ret_addr + len);
+
+    HC_RET = ret_addr;
+    break;
+  default:

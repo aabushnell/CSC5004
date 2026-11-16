@@ -1,0 +1,2 @@
+CompileFlags:
+  Remove: [-mno-default, -mfpmath=387]

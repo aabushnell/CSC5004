@@ -1,0 +1,88 @@
+[
+  {
+    "file": "hypercall.c",
+    "arguments": [
+      "/nix/store/fza5h3mv2acgjm129vy5g95fhnkcbybz-gcc-wrapper-15.3.0/bin/gcc",
+      "-c",
+      "-o",
+      "hypercall.o",
+      "hypercall.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/shv",
+    "output": "hypercall.o"
+  },
+  {
+    "file": "loader.c",
+    "arguments": [
+      "/nix/store/fza5h3mv2acgjm129vy5g95fhnkcbybz-gcc-wrapper-15.3.0/bin/gcc",
+      "-c",
+      "-o",
+      "loader.o",
+      "loader.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/shv",
+    "output": "loader.o"
+  },
+  {
+    "file": "main.c",
+    "arguments": [
+      "/nix/store/fza5h3mv2acgjm129vy5g95fhnkcbybz-gcc-wrapper-15.3.0/bin/gcc",
+      "-c",
+      "-o",
+      "main.o",
+      "main.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/shv",
+    "output": "main.o"
+  },
+  {
+    "file": "memory.c",
+    "arguments": [
+      "/nix/store/fza5h3mv2acgjm129vy5g95fhnkcbybz-gcc-wrapper-15.3.0/bin/gcc",
+      "-c",
+      "-o",
+      "memory.o",
+      "memory.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/shv",
+    "output": "memory.o"
+  },
+  {
+    "file": "vmm.c",
+    "arguments": [
+      "/nix/store/fza5h3mv2acgjm129vy5g95fhnkcbybz-gcc-wrapper-15.3.0/bin/gcc",
+      "-c",
+      "-o",
+      "vmm.o",
+      "vmm.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/shv",
+    "output": "vmm.o"
+  },
+  {
+    "file": "boot.asm",
+    "arguments": [
+      "/nix/store/hkssvl3yv2w5vk7fbrypyp95gmkgvznz-nasm-3.02/bin/nasm",
+      "-f",
+      "elf64",
+      "boot.asm",
+      "-o",
+      "boot.o"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/guest/boot",
+    "output": "boot.o"
+  },
+  {
+    "file": "main.c",
+    "arguments": [
+      "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/guest/app/musl/musl_installation/bin/musl-gcc",
+      "-fno-stack-protector",
+      "-mno-default",
+      "-mfpmath=387",
+      "-O0",
+      "-c",
+      "main.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/CSC5004/hyp/hypercalls/guest/app"
+  }
+]
