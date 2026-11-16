@@ -23,10 +23,20 @@
           inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
         in
         {
-          default = pkgs.mkShell {
+          default = pkgs.mkShell.override {
+            # pin to gcc 15 for compat
+            stdenv = pkgs.gcc15Stdenv;
+          } {
             packages =
               with pkgs;
               [
+                # asm
+                nasm
+
+                # c
+                clang-tools
+                bear
+
                 # k8s
                 minikube
                 kubectl
@@ -35,7 +45,7 @@
                 google-cloud-sdk
               ]
               ++ optionals isLinux [
-                # void
+                linuxHeaders
               ]
               ++ optionals isDarwin [
                 # void
