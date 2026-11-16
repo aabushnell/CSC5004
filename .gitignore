@@ -2,3 +2,9 @@
 .direnv/
 .kube/
 .minikube/
+
+*musl/
+
+*.cache/
+
+*.tgz
