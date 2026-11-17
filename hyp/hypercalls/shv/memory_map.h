@@ -1,6 +1,9 @@
 #ifndef MEMORY_MAP_H
 #define MEMORY_MAP_H
 
+#define PAGE_SIZE 0x1000
+#define PAGE_ALIGN (PAGE_SIZE - 1)
+
 // Initial size of the guest's memory.
 #define GUEST_INIT_MEM_SZ 0xF000000
 
@@ -15,7 +18,7 @@
 #define APP_GPA 0x9000
 
 // First available page for get_pages.
-#define ALLOC_AREA_GPA 0xb000
+#define ALLOC_AREA_GPA 0x40000
 
 // First guest invalid page above its memory mapping.
 #define MEMORY_TOP_GPA GUEST_INIT_MEM_SZ

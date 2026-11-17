@@ -41,4 +41,6 @@ void memory_map(uint8_t *mem, uint64_t virt_addr, uint64_t phys_addr);
 
 uint64_t get_pages(int nb_page);
 
+uint8_t *get_hva(uint64_t gpa);
+
 #endif

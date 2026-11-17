@@ -23,7 +23,6 @@ int max_slots;
 memory_slot *memory_slots;
 
 
-
 /** Handle reasons for VM to exit back to the HV.
  *
  * Returns 1 if the guest should keep executing, 0 otherwise.
@@ -94,9 +93,9 @@ int create_vm(void) {
     err(1, "allocating guest memory");
 
   /* Allocate memory slot array. */
-  max_slots = ioctl(vmfd, KVM_CAP_NR_MEMSLOTS, NULL);
+  max_slots = ioctl(kvmfd, KVM_CHECK_EXTENSION, KVM_CAP_NR_MEMSLOTS);
   if (max_slots == -1)
-    err(1, "KVM_CAP_NR_MEMSLOTS");
+    err(1, "KVM_CHECK_EXTENSION: KVM_CAP_NR_MEMSLOTS");
   memory_slots = calloc(max_slots, sizeof(memory_slot));
 
   /* Map it. */
