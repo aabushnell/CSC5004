@@ -21,6 +21,10 @@
           pkgs = nixpkgs.legacyPackages.${system};
           inherit (pkgs.lib) optionals optionalString;
           inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
+
+          gdk = pkgs.google-cloud-sdk.withExtraComponents( with pkgs.google-cloud-sdk.components; [
+            gke-gcloud-auth-plugin
+          ]);
         in
         {
           default = pkgs.mkShell.override {
@@ -30,6 +34,10 @@
             packages =
               with pkgs;
               [
+                # utility
+                openssl
+                jq
+
                 # asm
                 nasm
 
@@ -38,12 +46,12 @@
                 bear
 
                 # k8s
-                minikube
                 kubectl
                 kubernetes-helm
 
                 # gcp
-                google-cloud-sdk
+                gdk
+                # google-cloud-sdk
               ]
               ++ optionals isLinux [
                 linuxHeaders
