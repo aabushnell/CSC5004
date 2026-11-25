@@ -40,6 +40,7 @@
                 # k8s
                 minikube
                 kubectl
+                kubernetes-helm
 
                 # gcp
                 google-cloud-sdk
