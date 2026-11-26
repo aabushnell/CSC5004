@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
 
   // Construct Initial Process Stack for guest app
   //  > based on System-V ABI spec
+  //  https://refspecs.linuxbase.org/elf/abi386-4.pdf
   uint64_t stack_ptr = APP_STACK_GPA;
   size_t guest_argc = argc - 2;
   uint64_t info_ptr = stack_ptr + 0x28 + 0x08 * guest_argc;
