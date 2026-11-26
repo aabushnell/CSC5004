@@ -132,7 +132,7 @@ int hypercall(struct kvm_regs *regs, uint8_t *memory, int vcpufd) {
     }
 
     // map in gva space
-    memory_map_range(guest_mem, base_addr, base_addr + len);
+    memory_map_range(guest_mem, base_addr, base_addr + alloc_len);
 
     HC_RET = ret_addr;
     break;
